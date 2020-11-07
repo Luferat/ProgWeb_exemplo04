@@ -1,0 +1,7 @@
+nav {
+    background: #dedede;
+    display: flex;
+}
+nav a {
+    padding: .5rem;
+}
