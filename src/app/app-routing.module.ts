@@ -8,6 +8,9 @@ import { NewsComponent } from './pages/news/news.component';
 import { AboutComponent } from './pages/about/about.component';
 import { E404Component } from './pages/e404/e404.component';
 
+// Aula 08) Importa a página 'view'
+import { ViewComponent } from './pages/view/view.component';
+
 const routes: Routes = [
 
   // Rota da página inicial
@@ -45,7 +48,14 @@ const routes: Routes = [
     data: { title: 'Sobre' }
   },
 
-  // Rotas inexistentes
+  // Aula 08) Rota para exibir um artigo único
+  {
+    path: 'view/:id',
+    component: ViewComponent,
+    data: { title: 'Artigo' }
+  },
+
+  // Rotas inexistentes - Deve ser sempre a última
   {
     path: '**',
     component: E404Component,
