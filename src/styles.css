@@ -30,10 +30,57 @@ a:hover {
   color: orangered;
 }
 
-app-root *:first-child {
-  margin-top: 0;
+.row {
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  padding-bottom: 1rem;
 }
 
-article {
-  margin: 1rem;
+.col-right {
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, .1);
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .row {
+    flex-direction: row;
+  }
+  .col-left {
+    flex: 1;
+    padding-right: 1rem;
+  }
+  .col-right {
+    width: 11rem;
+  }
+}
+
+/* HTML buttons */
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  text-align: center;
+  padding: .5rem 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: .3rem;
+}
+
+button.center {
+  display: table;
+  margin: 1rem auto;
+}
+
+button.primary {
+  background: steelblue;
+  color: white;
+}
+
+button.primary:hover {
+  background: orangered;
 }

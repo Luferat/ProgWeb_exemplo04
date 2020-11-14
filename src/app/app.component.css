@@ -1,7 +1,107 @@
-nav {
-    background: #dedede;
-    display: flex;
+.wrap {
+  width: 100%;
+  max-width: 1024px;
+  min-width: 280px;
+  position: relative;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
-nav a {
-    padding: .5rem;
+
+.header {
+  display: flex;
+  align-items: center;
+  background: rgba(1, 204, 255, 0.5);
+}
+
+.header i {
+  color: black;
+  display: block;
+  margin: 1rem;
+  -webkit-text-stroke: 1px white;
+  cursor: pointer;
+}
+
+.header i:hover {
+  color: rgb(255, 0, 0);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.header h1 small {
+  font-size: .75rem;
+  display: block;
+  font-weight: normal;
+  letter-spacing: .07rem;
+  margin-top: .2rem;
+}
+
+.nav {
+  background: #ddd;
+  display: flex;
+}
+
+.nav a {
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #444;
+  font-size: .95rem;
+}
+
+.nav ion-icon {
+  font-size: 1.2rem;
+  display: block;
+  text-align: center;
+}
+
+.nav a:first-child {
+  margin-right: auto;
+}
+
+.nav a:hover, .selected {
+  background: #444;
+  color: #ddd;
+}
+
+.main {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex: 1;
+  background: rgba(128, 128, 128, .2);
+}
+
+.footer {
+  background: black;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer a {
+  padding: .4rem;
+  color: #ddd;
+}
+
+.footer a:hover {
+  background: #ddd;
+  color: #333;
+}
+
+@media (min-width: 575px) {
+  .nav a {
+    flex-direction: row;
+  }
+  .nav ion-icon {
+    padding-right: 0.5rem;
+  }
 }

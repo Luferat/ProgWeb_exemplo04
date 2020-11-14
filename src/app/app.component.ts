@@ -1,4 +1,5 @@
 // Importar dependencias
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
@@ -26,7 +27,9 @@ export class AppComponent implements OnInit {
     public router: Router,
 
     // Cria objeto 'ActivatedRoute'
-    public activatedRoute: ActivatedRoute
+    public activatedRoute: ActivatedRoute,
+
+    private viewportScroller: ViewportScroller
   ) { }
 
   ngOnInit() {
@@ -41,10 +44,10 @@ export class AppComponent implements OnInit {
         const child = this.activatedRoute.firstChild;
 
         // Se exite título na rota
-        if (child.snapshot.data['title']) {
+        if (child.snapshot.data.title) {
 
           // Retorna o titulo do site ~ título do site
-          return appTitle + ' ~ ' + child.snapshot.data['title'];
+          return appTitle + ' ~ ' + child.snapshot.data.title;
         }
 
         // Se não tem títlo, retorna o título do site
@@ -55,5 +58,10 @@ export class AppComponent implements OnInit {
       // Atribui título à tag <title></title>
       this.titleService.setTitle(ttl);
     });
+  }
+
+  // Processa âncoras
+  public anchorLink(anchorName: string): void {
+    this.viewportScroller.scrollToAnchor(anchorName);
   }
 }
