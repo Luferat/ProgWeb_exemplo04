@@ -5,7 +5,7 @@
     <h2>Artigos Recentes</h2>
 
     <!-- Aula 08) Exibe os artigos -->
-    <div class="articles">
+    <div class="articles" *ngIf="items">
 
       <div class="article" *ngFor="let item of items | async">
         <img src="{{ item.img }}" alt="{{ item.title }}">

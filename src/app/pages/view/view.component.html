@@ -1,1 +1,9 @@
-<p>view works!</p>
+<div class="art-view" *ngIf="item | async as art">
+
+  <h2 class="art-title">{{ art.title }}</h2>
+  <small class="art-date">Em {{ art.date | date: 'dd/MM/yyyy, hh:mm'}}.</small>
+  <div class="art-text">{{ art.text }}</div>
+
+</div>
+
+<p><button class="primary center" routerLink="/"><i class="fas fa-home fa-fw"></i> Página inicial</button></p>
