@@ -2,7 +2,7 @@
 
   <h2>{{ art.title }}</h2>
   <small>Em {{ art.date | date: 'dd/MM/yyyy, hh:mm' }}.</small>
-  <div>{{ art.text }}</div>
+  <div [innerHTML]="art.text"></div>
 
   <p><button class="center primary" routerLink="/">Lista de Artigos</button></p>
 
