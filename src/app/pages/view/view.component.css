@@ -1,0 +1,8 @@
+small {
+  display: block;
+  margin: -0.5rem 0 1rem 0;
+  padding: 0.2rem 0.5rem;
+  text-align: right;
+  border-top: 1px dotted grey;
+  border-bottom: 1px dotted grey;
+}

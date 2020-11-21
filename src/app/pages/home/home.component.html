@@ -19,6 +19,22 @@
 
   <aside class="col-right">
 
+    <div *ngIf="auth.user | async as user; else showLogin">
+      <h4>Olá {{ user.displayName }}!</h4>
+      <div class="user-data">
+        <img src="{{ user.photoURL }}" alt="{{ user.displayName }}">
+        <small>{{ user.email }}</small>
+      </div>
+    </div>
+
+    <ng-template #showLogin>
+      <h3>Faça login</h3>
+      <p>Logue-se para ter acesso aos artigos completos. É de graça!</p>
+      <button class="center primary" routerLink="/login"><i class="fas fa-sign-in-alt fa-fw"></i> Entrar /
+        Login</button>
+    </ng-template>
+
+    &nbsp;
     <h3>Sidebar</h3>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus doloribus incidunt soluta, sequi ab maxime
       iure veritatis a possimus ut numquam nisi, cumque cupiditate eos. Iusto corporis pariatur ex unde.</p>

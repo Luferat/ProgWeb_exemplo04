@@ -11,6 +11,9 @@ import { E404Component } from './pages/e404/e404.component';
 // Aula 08) Importa a página 'view'
 import { ViewComponent } from './pages/view/view.component';
 
+// Aula 09) Importa a página 'login'
+import { LoginComponent } from './pages/login/login.component';
+
 const routes: Routes = [
 
   // Rota da página inicial
@@ -55,6 +58,13 @@ const routes: Routes = [
     data: { title: 'Artigo' }
   },
 
+  // Aula 09) Página de login
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: { title: 'Faça login' }
+  },
+
   // Rotas inexistentes - Deve ser sempre a última
   {
     path: '**',
@@ -64,7 +74,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { anchorScrolling: 'enabled'})],
+  imports: [RouterModule.forRoot(routes, { anchorScrolling: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -82,6 +82,11 @@ button.center {
   margin: 1rem auto;
 }
 
+button.block {
+  display: block;
+  width: 100%;
+}
+
 button.primary {
   background: steelblue;
   color: white;

@@ -15,6 +15,7 @@ import { E404Component } from './pages/e404/e404.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { ViewComponent } from './pages/view/view.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ViewComponent } from './pages/view/view.component';
     ContactsComponent,
     AboutComponent,
     E404Component,
-    ViewComponent
+    ViewComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
