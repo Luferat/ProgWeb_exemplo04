@@ -1,15 +1,15 @@
-<div class="row">
+<div class="main-row">
 
-  <article class="col-left">
+  <article>
 
     <h2>Artigos Recentes</h2>
 
     <!-- Aula 08) Exibe os artigos -->
-    <div class="articles">
+    <div class="article" *ngFor="let item of items | async">
 
-      <div class="article" *ngFor="let item of items | async">
-        <img src="{{ item.img }}" alt="{{ item.title }}">
-        <h4><a routerLink="/view/{{ item.artId }}">{{ item.title }}</a></h4>
+      <div routerLink="/view/{{ item.artId }}"><img src="{{ item.img }}" alt="{{ item.title }}"></div>
+      <div routerLink="/view/{{ item.artId }}">
+        <h4>{{ item.title }}</h4>
         <small>{{ item.intro }}</small>
       </div>
 
@@ -17,23 +17,7 @@
 
   </article>
 
-  <aside class="col-right">
-
-    <div *ngIf="auth.user | async as user; else showLogin">
-      &nbsp;
-      <div class="user-data">
-        <img src="{{ user.photoURL }}" alt="{{ user.displayName }}">
-        <small><strong>{{ user.displayName }}</strong></small>
-      </div>
-      <hr>
-    </div>
-
-    <ng-template #showLogin>
-      <h3>Faça login</h3>
-      <small>Logue-se para ter acesso aos artigos completos. É de graça!</small>
-      <button class="center primary" routerLink="/login"><i class="fas fa-sign-in-alt fa-fw"></i> Entrar /
-        Login</button>
-    </ng-template>
+  <aside>
 
     <h3>Sidebar</h3>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus doloribus incidunt soluta, sequi ab maxime

@@ -21,9 +21,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  login(provider: string) {
+  login(provider: string): void {
 
-    switch(provider) {
+    switch (provider) {
       case 'google':
         this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(
           () => {
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
           () => {
             this.router.navigate(['/']);
           }
-        );;
+        );
         break;
     }
   }

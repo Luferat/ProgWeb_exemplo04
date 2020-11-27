@@ -14,6 +14,17 @@ import { ViewComponent } from './pages/view/view.component';
 // Aula 09) Importa a página 'login'
 import { LoginComponent } from './pages/login/login.component';
 
+// Importando dependências
+import { AngularFireAuthGuard, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { LogoutComponent } from './pages/logout/logout.component';
+
+// Se não está logado, roteia para 'login'
+const toLogin = () => redirectUnauthorizedTo(['/login']);
+
+// Se está logado, roteia para a 'raiz'
+const isLogged = () => redirectLoggedInTo(['/']);
+
 const routes: Routes = [
 
   // Rota da página inicial
@@ -55,14 +66,29 @@ const routes: Routes = [
   {
     path: 'view/:id',
     component: ViewComponent,
-    data: { title: 'Artigo' }
+    canActivate: [AngularFireAuthGuard],
+    data: { title: 'Artigo', authGuardPipe: toLogin }
   },
 
   // Aula 09) Página de login
   {
     path: 'login',
     component: LoginComponent,
-    data: { title: 'Faça login' }
+    canActivate: [AngularFireAuthGuard],
+    data: { title: 'Faça login' , authGuardPipe: isLogged }
+  },
+
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { title: 'Perfil de usuário', authGuardPipe: toLogin }
+  },
+
+  {
+    path: 'logout',
+    component: LogoutComponent,
+    data: { title: 'Logout de usuário' }
   },
 
   // Rotas inexistentes - Deve ser sempre a última

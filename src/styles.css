@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  outline: none;
 }
 
 html, body {
@@ -30,7 +31,7 @@ a:hover {
   color: orangered;
 }
 
-.row {
+.main-row {
   display: flex;
   position: relative;
   height: 100%;
@@ -39,28 +40,35 @@ a:hover {
   padding-bottom: 1rem;
 }
 
-.col-right {
+aside {
   margin-top: 1rem;
   background: rgba(255, 255, 255, .1);
   padding: 0 1rem;
   overflow: hidden;
 }
 
+aside h3 {
+  border-bottom: 3px dotted grey;
+  margin: 0 -1rem;
+  padding: .6rem 1rem .5rem 1rem;
+  background: rgba(255, 255, 255, .1);
+}
+
 @media (min-width: 640px) {
-  .row {
+  .main-row {
     flex-direction: row;
   }
-  .col-left {
+  article {
     flex: 1;
     padding-right: 1rem;
   }
-  .col-right {
+  aside {
     width: 11rem;
   }
 }
 
 @media (min-width: 768px) {
-  .col-right {
+  aside {
     width: 13rem;
   }
 }
@@ -75,6 +83,7 @@ button {
   font-weight: bold;
   border: none;
   border-radius: .3rem;
+  cursor: pointer;
 }
 
 button.center {
@@ -90,6 +99,12 @@ button.block {
 button.primary {
   background: steelblue;
   color: white;
+}
+
+button.primary:disabled, button.primary:disabled:hover {
+  background: grey;
+  color: #444;
+  cursor: not-allowed;
 }
 
 button.primary:hover {

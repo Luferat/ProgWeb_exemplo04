@@ -17,6 +17,10 @@ import { environment } from '../environments/environment';
 import { ViewComponent } from './pages/view/view.component';
 import { LoginComponent } from './pages/login/login.component';
 
+import { RouterModule } from '@angular/router';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { LogoutComponent } from './pages/logout/logout.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +30,9 @@ import { LoginComponent } from './pages/login/login.component';
     AboutComponent,
     E404Component,
     ViewComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +40,9 @@ import { LoginComponent } from './pages/login/login.component';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 
     // Aula 08) Inicializa o Firebase
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+
+    RouterModule
   ],
   providers: [
 

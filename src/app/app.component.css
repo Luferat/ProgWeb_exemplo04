@@ -14,9 +14,10 @@
   display: flex;
   align-items: center;
   background: rgba(1, 204, 255, 0.5);
+  justify-content: space-between;
 }
 
-.header i {
+.header>i {
   color: black;
   display: block;
   margin: 1rem;
@@ -24,14 +25,14 @@
   cursor: pointer;
 }
 
-.header i:hover {
+.header>i:hover {
   color: rgb(255, 0, 0);
 }
 
 .header h1 {
   margin: 0;
   font-size: 1.4rem;
-  text-align: center;
+  flex: 1;
 }
 
 .header h1 small {
@@ -57,7 +58,7 @@
   font-size: .95rem;
 }
 
-.nav ion-icon {
+.nav i {
   font-size: 1.2rem;
   display: block;
   text-align: center;
@@ -101,7 +102,35 @@
   .nav a {
     flex-direction: row;
   }
-  .nav ion-icon {
-    padding-right: 0.5rem;
+  .nav i {
+    margin-right: .2rem;
   }
+}
+
+.user {
+  padding: 1rem;
+}
+
+.user img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+}
+
+.user button {
+  padding: .2rem .4rem;
+  font-size: small;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+.user button i {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: .4rem;
 }
