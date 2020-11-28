@@ -14,6 +14,17 @@ import { ViewComponent } from './pages/view/view.component';
 // Aula 09) Importa a página 'login'
 import { LoginComponent } from './pages/login/login.component';
 
+// Aula 10) Importa o router guards do firebase
+import { AngularFireAuthGuard, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { LogoutComponent } from './pages/logout/logout.component';
+
+// Aula 10) Redirecionamento das rotas para usuários não logados
+const toLogin = () => redirectUnauthorizedTo(['/login']);
+
+// Aula 10) Redirecionamento das rotas para usuários já logados
+const isLogged = () => redirectLoggedInTo(['/']);
+
 const routes: Routes = [
 
   // Rota da página inicial
@@ -55,14 +66,31 @@ const routes: Routes = [
   {
     path: 'view/:id',
     component: ViewComponent,
-    data: { title: 'Artigo' }
+    canActivate: [AngularFireAuthGuard],
+    data: { title: 'Artigo', authGuardPipe: toLogin }
   },
 
   // Aula 09) Página de login
   {
     path: 'login',
     component: LoginComponent,
-    data: { title: 'Faça login' }
+    canActivate: [AngularFireAuthGuard],
+    data: { title: 'Faça login', authGuardPipe: isLogged }
+  },
+
+  // Aula 10) Rota para perfil, protegida
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { title: 'Seu perfil', authGuardPipe: toLogin }
+  },
+
+  // Aula 10) Rota para logout
+  {
+    path: 'logout',
+    component: LogoutComponent,
+    data: { title: 'Logout / Sair' }
   },
 
   // Rotas inexistentes - Deve ser sempre a última

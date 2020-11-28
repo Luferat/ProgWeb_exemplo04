@@ -2,18 +2,9 @@
 
   <article class="col-left">
 
-    <h2>Artigos Recentes</h2>
-
-    <!-- Aula 08) Exibe os artigos -->
-    <div class="articles">
-
-      <div class="article" *ngFor="let item of items | async">
-        <img src="{{ item.img }}" alt="{{ item.title }}">
-        <h4><a routerLink="/view/{{ item.artId }}">{{ item.title }}</a></h4>
-        <small>{{ item.intro }}</small>
-      </div>
-
-    </div>
+    <h2>Sair do site</h2>
+    <p>Ao sair você não terá acesso ao conteúdo exclusivo, mas, você pode fazer login novamente a qualquer momento.</p>
+    <button class="primary center" (click)="logout()"><i class="fas fa-sign-out-alt fa-fw"></i>&nbsp; Logout / Sair</button>
 
   </article>
 

@@ -31,7 +31,6 @@ export class ViewComponent implements OnInit {
 
           // 09) Obtém o documento do banco de dados
           this.item = this.afs.doc<any>(`articles/${data.id}`).valueChanges();
-
         }
       }
     );

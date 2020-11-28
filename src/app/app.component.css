@@ -13,10 +13,11 @@
 .header {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   background: rgba(1, 204, 255, 0.5);
 }
 
-.header i {
+.header>i {
   color: black;
   display: block;
   margin: 1rem;
@@ -24,14 +25,14 @@
   cursor: pointer;
 }
 
-.header i:hover {
+.header>i:hover {
   color: rgb(255, 0, 0);
 }
 
 .header h1 {
   margin: 0;
   font-size: 1.4rem;
-  text-align: center;
+  flex-grow: 1;
 }
 
 .header h1 small {
@@ -40,6 +41,35 @@
   font-weight: normal;
   letter-spacing: .07rem;
   margin-top: .2rem;
+}
+
+.header div {
+  margin-left: auto;
+}
+
+.header div img {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin: .5rem 1rem .5rem .5rem;
+  cursor: pointer;
+}
+
+.header button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: small;
+  padding: .4rem;
+  margin: .5rem 1rem .5rem .5rem;
+}
+
+.header button i {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: .3rem;
 }
 
 .nav {

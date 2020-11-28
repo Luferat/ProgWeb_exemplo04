@@ -7,6 +7,9 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 // Importa filter e map
 import { filter, map } from 'rxjs/operators';
 
+// 09) Importa autenticação
+import { AngularFireAuth } from '@angular/fire/auth';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -29,7 +32,10 @@ export class AppComponent implements OnInit {
     // Cria objeto 'ActivatedRoute'
     public activatedRoute: ActivatedRoute,
 
-    private viewportScroller: ViewportScroller
+    private viewportScroller: ViewportScroller,
+
+    // 09) Injeta autenticação
+    public auth: AngularFireAuth,
   ) { }
 
   ngOnInit() {

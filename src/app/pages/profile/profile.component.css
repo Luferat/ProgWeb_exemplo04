@@ -1,0 +1,32 @@
+.profile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profile img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: .4rem;
+}
+
+.profile ul {
+  margin-left: 0;
+  margin-right: 0;
+  font-size: small;
+}
+
+.col-left small {
+  display: block;
+  text-align: center;
+  margin-top: -0.8rem;
+}
+
+@media (min-width: 800px) {
+  .profile {
+    flex-direction: row;
+    justify-content: center;
+  }
+}

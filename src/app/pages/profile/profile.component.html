@@ -1,0 +1,50 @@
+<div class="row">
+
+  <article class="col-left">
+
+    <div *ngIf="auth.user | async as user">
+      <h2>Olá {{ user.displayName }}!</h2>
+
+      <p>Esses são seus dados de cadastro fornecidos pelo '{{ user.providerData[0].providerId }}'. Nenhuma informação
+        sensível é armazenada em nosso
+        site.</p>
+
+      <div class="profile">
+
+        <img src="{{ user.photoURL }}" alt="{{ user.displayName }}" title="{{ user.displayName }}">
+
+        <ul>
+          <li><strong>ID de usuário:</strong> {{ user.uid }}</li>
+          <li><strong>E-mail:</strong> {{ user.email }}</li>
+          <li><strong>Telefone:</strong> {{ user.phoneNumber }}</li>
+          <li><strong>Provedor de login:</strong> {{ user.providerData[0].providerId }}</li>
+          <li><strong>Cadastrado em:</strong> {{ user.metadata.creationTime | date: 'dd/MM/yyyy, hh:mm' }}</li>
+          <li><strong>Último acesso em:</strong> {{ user.metadata.lastSignInTime | date: 'dd/MM/yyyy, hh:mm' }}</li>
+        </ul>
+
+      </div>
+
+      <button class="primary center" (click)="editProfile(user.providerData[0].providerId)"><i
+          class="fas fa-address-card fa-fw"></i>&nbsp; Editar perfil</button>
+          <small>Perfil editado no '{{ user.providerData[0].providerId }}'.</small>
+
+      <button class="primary center" routerLink="/logout"><i class="fas fa-sign-out-alt fa-fw"></i>&nbsp; Logout / Sair</button>
+    </div>
+
+    <!-- Aula 10) Somente para teste. REMOVA! -->
+    <!-- <div *ngIf="auth.user | async as user">
+      Dados do usuário:
+      <pre>{{ user | json }}</pre>
+    </div> -->
+
+  </article>
+
+  <aside class="col-right">
+
+    <h3>Sidebar</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus doloribus incidunt soluta, sequi ab maxime
+      iure veritatis a possimus ut numquam nisi, cumque cupiditate eos. Iusto corporis pariatur ex unde.</p>
+
+  </aside>
+
+</div>
