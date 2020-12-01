@@ -1,27 +1,23 @@
-# Exemplo04
+# implementando a página de notícias
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+1) Serviço de API REST:
 
-## Development server
+  - Cadastre-se e gere um "API Key" no serviço "https://newsapi.org/";
+  - Anote a "API Key" de forma acessível.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+2) Carregue p módulo HTTP:
 
-## Code scaffolding
+  - Edite "app/app.module.ts" &rarr; 1 à 2
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3) Implementa o script de conexão com a API REST de notícias:
 
-## Build
+  - Edite "app/pages/news/news.component.ts" &rarr; 1 à 5
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+4) Implementa a 'view' (HTML):
 
-## Running unit tests
+  - Edite "app/pages/news/news.component.html" &rarr; 1 à 2
+  - Edite "app/pages/news/news.component.css" &rarr; *
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+5) Compile, teste e faça o merge com o "master".
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+*EOF*

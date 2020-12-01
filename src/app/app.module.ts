@@ -11,7 +11,7 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
 import { AboutComponent } from './pages/about/about.component';
 import { E404Component } from './pages/e404/e404.component';
 
-// Aula 08) Importar dependencias
+// Aula 08) Importar dependências
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { ViewComponent } from './pages/view/view.component';
@@ -20,6 +20,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { RouterModule } from '@angular/router';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { LogoutComponent } from './pages/logout/logout.component';
+
+// News 1) Importar dependências
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { LogoutComponent } from './pages/logout/logout.component';
     // Aula 08) Inicializa o Firebase
     AngularFireModule.initializeApp(environment.firebase),
 
-    RouterModule
+    RouterModule,
+
+    // News 2) Inicializa o módulo HTTP
+    HttpClientModule
   ],
   providers: [
 

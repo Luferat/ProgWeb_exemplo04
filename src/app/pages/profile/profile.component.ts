@@ -21,7 +21,7 @@ export class ProfileComponent implements OnInit {
 
     switch (provider) {
       case 'google.com':
-        this.profileURL = 'https://myaccount.google.com/profile';
+        this.profileURL = 'https://myaccount.google.com/';
         break;
       case 'facebook.com':
         this.profileURL = 'https://www.facebook.com/profile';
