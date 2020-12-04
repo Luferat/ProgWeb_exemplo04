@@ -22,10 +22,7 @@
     "@angular/router": "~10.2.0",
     "@angular/service-worker": "~10.2.0",
     "firebase": "^7.0.0 || ^8.0.0",
-    "rss-parser": "^3.9.0",
     "rxjs": "~6.6.0",
-    "stream": "0.0.2",
-    "timers": "^0.1.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },

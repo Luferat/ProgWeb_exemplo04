@@ -5,7 +5,7 @@
   - Cadastre-se e gere um "API Key" no serviço "https://newsapi.org/";
   - Anote a "API Key" de forma acessível.
 
-2) Carregue p módulo HTTP:
+2) Carregue o módulo HTTP:
 
   - Edite "app/app.module.ts" &rarr; 1 à 2
 
