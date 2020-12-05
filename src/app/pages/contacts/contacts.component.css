@@ -1,0 +1,23 @@
+.contact label {
+  display: block;
+}
+
+.contact input, .contact textarea {
+  width: 100%;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.contact textarea {
+  height: 6rem;
+}
+
+.field-error {
+  border: none;
+  border-bottom: 3px solid orangered;
+}
+
+.field-valid {
+  border: none;
+  border-bottom: 3px solid rgb(0, 255, 0);
+}

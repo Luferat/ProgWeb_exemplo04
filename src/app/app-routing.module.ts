@@ -45,7 +45,8 @@ const routes: Routes = [
   {
     path: 'news',
     component: NewsComponent,
-    data: { title: 'Notícias' }
+    canActivate: [AngularFireAuthGuard],
+    data: { title: 'Notícias', authGuardPipe: toLogin }
   },
 
   // Rota para 'contacts'

@@ -76,6 +76,7 @@ button {
   font-weight: bold;
   border: none;
   border-radius: .3rem;
+  cursor: pointer;
 }
 
 button.center {
@@ -95,4 +96,13 @@ button.primary {
 
 button.primary:hover {
   background: orangered;
+}
+
+button.primary:disabled {
+  background: grey;
+  cursor: not-allowed;
+}
+
+.danger {
+  color: orangered;
 }

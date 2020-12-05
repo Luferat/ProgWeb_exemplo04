@@ -1,0 +1,30 @@
+.news-item {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.news-item img {
+  width: 80px;
+  height: 80px;
+  display: block;
+}
+
+.news-item h4 {
+  margin: 0 0 .3rem 0;
+}
+
+.news-item div {
+  padding: .5rem .5rem .5rem 1rem;
+}
+
+.news-item:nth-child(odd) {
+  background: rgba(255, 255, 255, .1);
+}
+
+.news-item:nth-child(even) {
+  background: rgba(255, 255, 255, .05);
+}
+
+.news-item:hover {
+  background: rgba(255, 255, 255, .15);
+}

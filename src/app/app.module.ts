@@ -19,6 +19,12 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { LogoutComponent } from './pages/logout/logout.component';
 
+// Aula 11) Importa dependências
+import { HttpClientModule } from '@angular/common/http';
+
+// Aula 11.2) Importa dependências
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +44,11 @@ import { LogoutComponent } from './pages/logout/logout.component';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 
     // Aula 08) Inicializa o Firebase
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+
+    // Aula 11) Inicializa cliente HTTP
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
 
