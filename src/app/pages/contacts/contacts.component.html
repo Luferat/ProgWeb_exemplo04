@@ -4,77 +4,89 @@
 
     <h2>Faça contato</h2>
 
+    <div *ngIf="!feedback">
 
+      <p>Preencha o formulário abaixo para entrar em contato conosco.</p>
 
-    <p>Preencha o formulário abaixo para entrar em contato conosco.</p>
+      <form [formGroup]="contactForm" class="contact" (ngSubmit)="contactSend()">
 
-    <form [formGroup]="contactForm" class="contact" (ngSubmit)="contactSend()">
+        <p>
+          <label for="name">
+            Nome:
 
-      <p>
-        <label for="name">
-          Nome:
+            <!-- Aula 11.2) Validade do campo 'name' -->
+            <small class="danger" *ngIf="contactForm.controls.name.errors">
+              <span *ngIf="contactForm.controls.name.errors.required">* Preenchimento obrigatório</span>
+              <span *ngIf="contactForm.controls.name.errors.minlength">* Valor inválido</span>
+            </small>
 
-          <!-- Aula 11.2) Validade do campo 'name' -->
-          <small class="danger" *ngIf="contactForm.controls.name.errors">
-            <span *ngIf="contactForm.controls.name.errors.required">* Preenchimento obrigatório</span>
-            <span *ngIf="contactForm.controls.name.errors.minlength">* Valor inválido</span>
-          </small>
+          </label>
+          <input type="text" formControlName="name"
+            [className]="contactForm.controls.name.errors ? 'field-error' : 'field-valid'">
+        </p>
 
-        </label>
-        <input type="text" formControlName="name"
-          [className]="contactForm.controls.name.errors ? 'field-error' : 'field-valid'">
-      </p>
+        <p>
+          <label for="email">
+            E-mail:
 
-      <p>
-        <label for="email">
-          E-mail:
+            <!-- Aula 11.2) Validade do campo 'email' -->
+            <small class="danger" *ngIf="contactForm.controls.email.errors">
+              <span *ngIf="contactForm.controls.email.errors.required">* Preenchimento obrigatório</span>
+              <span *ngIf="contactForm.controls.email.errors.email">* Valor inválido</span>
+            </small>
+          </label>
+          <input type="email" formControlName="email"
+            [className]="contactForm.controls.email.errors ? 'field-error' : 'field-valid'">
+        </p>
 
-          <!-- Aula 11.2) Validade do campo 'email' -->
-          <small class="danger" *ngIf="contactForm.controls.email.errors">
-            <span *ngIf="contactForm.controls.email.errors.required">* Preenchimento obrigatório</span>
-            <span *ngIf="contactForm.controls.email.errors.email">* Valor inválido</span>
-          </small>
-        </label>
-        <input type="email" formControlName="email"
-          [className]="contactForm.controls.email.errors ? 'field-error' : 'field-valid'">
-      </p>
+        <p>
+          <label for="subject">
+            Assunto:
 
-      <p>
-        <label for="subject">
-          Assunto:
+            <!-- Aula 11.2) Validade do campo 'subject' -->
+            <small class="danger" *ngIf="contactForm.controls.subject.errors">
+              <span *ngIf="contactForm.controls.subject.errors.required">* Preenchimento obrigatório</span>
+              <span *ngIf="contactForm.controls.subject.errors.minlength">* Valor inválido</span>
+            </small>
+          </label>
+          <input type="text" formControlName="subject"
+            [className]="contactForm.controls.subject.errors ? 'field-error' : 'field-valid'">
+        </p>
 
-          <!-- Aula 11.2) Validade do campo 'subject' -->
-          <small class="danger" *ngIf="contactForm.controls.subject.errors">
-            <span *ngIf="contactForm.controls.subject.errors.required">* Preenchimento obrigatório</span>
-            <span *ngIf="contactForm.controls.subject.errors.minlength">* Valor inválido</span>
-          </small>
-        </label>
-        <input type="text" formControlName="subject"
-          [className]="contactForm.controls.subject.errors ? 'field-error' : 'field-valid'">
-      </p>
+        <p>
+          <label for="message">
+            Mensagem:
 
-      <p>
-        <label for="message">
-          Mensagem:
+            <!-- Aula 11.2) Validade do campo 'message' -->
+            <small class="danger" *ngIf="contactForm.controls.message.errors">
+              <span *ngIf="contactForm.controls.message.errors.required">* Preenchimento obrigatório</span>
+              <span *ngIf="contactForm.controls.message.errors.minlength">* Valor inválido</span>
+            </small>
+          </label>
+          <textarea formControlName="message"
+            [className]="contactForm.controls.message.errors ? 'field-error' : 'field-valid'"></textarea>
+        </p>
 
-          <!-- Aula 11.2) Validade do campo 'message' -->
-          <small class="danger" *ngIf="contactForm.controls.message.errors">
-            <span *ngIf="contactForm.controls.message.errors.required">* Preenchimento obrigatório</span>
-            <span *ngIf="contactForm.controls.message.errors.minlength">* Valor inválido</span>
-          </small>
-        </label>
-        <textarea formControlName="message"
-          [className]="contactForm.controls.message.errors ? 'field-error' : 'field-valid'"></textarea>
-      </p>
+        <p>
+          <button class="primary" [disabled]="!contactForm.valid">Enviar contato</button>
+        </p>
 
-      <p>
-        <button class="primary" [disabled]="!contactForm.valid">Enviar contato</button>
-      </p>
+      </form>
 
-    </form>
+    </div>
 
-    <pre>{{ contactForm.value | json }}</pre>
-    <pre>Válido? {{ contactForm.valid | json }}</pre>
+    <!-- Aula 12) Feedback para o usuário -->
+    <div *ngIf="feedback">
+
+      <h4>Olá {{ contactForm.controls.name.value }}!</h4>
+      <p>Seu contato foi enviado para a equipe do site...</p>
+      <p><em>Obrigado!</em></p>
+      <button class="primary center" routerLink="/"><i class="fas fa-home fa-fw"></i> Página inicial</button>
+
+    </div>
+
+    <!-- <pre>{{ contactForm.value | json }}</pre>
+    <pre>Válido? {{ contactForm.valid | json }}</pre> -->
 
   </article>
 

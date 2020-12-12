@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-contacts',
@@ -14,6 +15,12 @@ export class ContactsComponent implements OnInit {
 
   // Aula 11.2) Atributos do objeto
   contactForm: FormGroup; // Formulário
+
+  // Aula 12) Cria um objeto de data
+  pipe = new DatePipe('en_US');
+
+  // Aula 12) Controla feedback ao usuário
+  feedback = false;
 
   constructor(
 
@@ -77,17 +84,39 @@ export class ContactsComponent implements OnInit {
           Validators.minLength(5)
         ])
       ],
-      status: ['']
+      status: ['enviado']
     });
   }
 
   // Aula 11.2) Processa envio do formulário
+  // Aula 12) Processa envio do formulário
   contactSend(): void {
 
-    // Criar data e status
-    // Salvar no Firebase Cloud Firestore
-      // Exibir feeback
-      // Resetar formulário
+    // Criar data
+    this.contactForm.controls.date.setValue(
+      this.pipe.transform(Date.now(), 'yyyy-MM-dd hh:mm:ss').trim()
+    );
 
+    // Salvar no Firebase Cloud Firestore
+    this.fbStore.collection('contacts').add(this.contactForm.value)
+      .then(() => {
+
+        // Exibir feeback
+        this.feedback = true;
+
+        // Resetar formulário
+        this.contactForm.reset({
+          date: '',
+          name: this.contactForm.value.name.trim(),
+          email: this.contactForm.value.email.trim(),
+          subject: '',
+          message: '',
+          status: 'enviado'
+        });
+
+      })
+      .catch((error) => {
+        console.error('Erro ao salvar no Db:', error);
+      });
   }
 }
