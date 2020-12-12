@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1607779968866,
+  "timestamp": 1607780817068,
   "index": "https://luferat.github.io/ProgWeb_exemplo04/index.html",
   "assetGroups": [
     {
@@ -14,7 +14,7 @@
         "https://luferat.github.io/ProgWeb_exemplo04/1.ee7153fba0e6343f3c61.js",
         "https://luferat.github.io/ProgWeb_exemplo04/favicon.ico",
         "https://luferat.github.io/ProgWeb_exemplo04/index.html",
-        "https://luferat.github.io/ProgWeb_exemplo04/main.8ff4539e842030ad74c1.js",
+        "https://luferat.github.io/ProgWeb_exemplo04/main.a3e763b8122f4a5902ce.js",
         "https://luferat.github.io/ProgWeb_exemplo04/manifest.webmanifest",
         "https://luferat.github.io/ProgWeb_exemplo04/polyfills.2b9efda34b919da8fe8a.js",
         "https://luferat.github.io/ProgWeb_exemplo04/runtime.b7d1295fbf65db8a144d.js",
@@ -54,8 +54,8 @@
     "https://luferat.github.io/ProgWeb_exemplo04/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "https://luferat.github.io/ProgWeb_exemplo04/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://luferat.github.io/ProgWeb_exemplo04/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://luferat.github.io/ProgWeb_exemplo04/index.html": "d9cf5dcbacc3f4f78d1d0780368f42efde9e96de",
-    "https://luferat.github.io/ProgWeb_exemplo04/main.8ff4539e842030ad74c1.js": "19195d2752263872a847b584a2d560c7f39698cf",
+    "https://luferat.github.io/ProgWeb_exemplo04/index.html": "289bfc0a70a2a2874c7f9727f98e165fc19617a8",
+    "https://luferat.github.io/ProgWeb_exemplo04/main.a3e763b8122f4a5902ce.js": "b079bab688b474f0da3947ea8ffd05dd316000de",
     "https://luferat.github.io/ProgWeb_exemplo04/manifest.webmanifest": "30b8bc3dbdcefbabb3bbf6293a05b7eec134362e",
     "https://luferat.github.io/ProgWeb_exemplo04/polyfills.2b9efda34b919da8fe8a.js": "9db3f1bf5afbecb31233abc0b143858b395cc9e9",
     "https://luferat.github.io/ProgWeb_exemplo04/runtime.b7d1295fbf65db8a144d.js": "1e047d49cb83a47f113c1d230a7564f8d804c996",

@@ -16,7 +16,7 @@ export class NewsComponent implements OnInit {
   apiItens = 10; // Quantidade de notícias à exibir. No máximo de 20.
 
   // Aula 11) Cuidado ao alterar
-  apiURL = `http://newsapi.org/v2/everything?apiKey=${this.apiKey}&source=google-news-br&language=pt&q=${this.apiQuery}`;
+  apiURL = `https://newsapi.org/v2/everything?apiKey=${this.apiKey}&source=google-news-br&language=pt&q=${this.apiQuery}`;
   newsList: any;
 
   constructor(
