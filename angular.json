@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "https://luferat.github.io/ProgWeb_exemplo04/",
+//            "baseHref": "https://luferat.github.io/ProgWeb_exemplo04/",
             "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
